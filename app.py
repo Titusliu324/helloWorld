@@ -8,8 +8,8 @@ def hello_world():  # put application's code here
     return 'Hello World from Titus Liu!'
 
 @app.route('/hello')
-def hello_page():  # put application's code here
-    return 'Hello World from Titus Liu! This is my first HTML page!'
+def hello():  # put application's code here
+    return render_template("hello.html")
 
 @app.route('/about')
 def about():  # put application's code here
