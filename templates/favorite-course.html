@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 {% extends "base.html" %}
 
     {% block page_title %}Favorite Courses{% endblock %}
@@ -8,4 +7,3 @@
 {% block page_content %}
     <p>You entered your favorite course as: {{request.args.get('subject') }} {{ request.args.get('course_number') }}</p>
 {% endblock %}
-</html>
