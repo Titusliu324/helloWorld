@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    {% block page_title %}Contact{% endblock %}
+</head>
+{% block page_content %}
+    <div class="container">
+    {% block page_head %}Contact Me{% endblock %}
+        {% if form_submitted %}
+            <div class = "col-12">
+                <h2> Thank You for completing the form</h2>
+            </div>
+            <div class = "col-md-6">
+                <p>First Name: </p>
+            </div>
+            <div class = "col-md-6">
+                <p>{{ request.form.get('first_name') }}</p>
+            </div>
+            <div class = "col-md-6">
+                <p>Last Name: </p>
+            </div>
+            <div class = "col-md-6">
+                <p>{{ request.form.get('last_name') }}</p>
+            </div>
+            <div class = "col-md-6">
+                <p>Email: </p>
+            </div>
+            <div class = "col-md-6">
+                <p>{{ request.form.get('email_address') }}</p>
+            </div>
+            <div class = "col-md-6">
+                <p>Phone Number: </p>
+            </div>
+            <div class = "col-md-6">
+                <p>{{ request.form.get('phone_number') }}</p>
+            </div>
+            <p> <a href="{{ url_for('contact') }}"> Complete form again</a></p>
+        {% else %}
+
+            <form class="row g-3" action="{{ url_for('contact') }}" method="post">
+                <div class="col-md-6">
+                    <label for="first_name">First name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name"  required>
+                </div>
+                <div class="col-md-6">
+                    <label for="last_name">Last name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name"  required>
+                </div>
+                <div class="col-12">
+                    <label for="email_address">Email Address</label>
+                    <input type="email" class="form-control" id="email_address" aria-describedby="emailHelp" name="email_address">
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endif %}
+    </div>
+        <script src="https://cdn.jsdeliver.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    -->
+{% endblock %}
+
+</html>
