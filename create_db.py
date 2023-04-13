@@ -17,7 +17,7 @@ with app.app_context():
 
     # Initial loading of users
     users = [
-        {'username': 'titus1234', 'email': 'titus1234@umd.edu', 'first_name': 'Titus', 'last_name': 'Liu',
+        {'username': 'titus1234', 'email': 'liut1234@terpmail.umd.edu', 'first_name': 'Titus', 'last_name': 'Liu',
          'password': generate_password_hash('Boring321', method='sha256'), 'role': 'STUDENT'},
         {'username': 'manager', 'email': 'manager@umd.edu', 'first_name': 'Joe', 'last_name': 'King',
          'password': generate_password_hash('managerpw', method='sha256'), 'role': 'MANAGER'},
